@@ -10,8 +10,24 @@ Moreover, it uses the [moviepy](https://zulko.github.io/moviepy) library to dete
 
 `pip install moviepy`
 
-## Execution
+Tested with Python 3.5
 
-For convenient testing and tweaking, all the input parameters are hardcoded in the script. Modify them as needed and run:
+## Usage
 
-`python screenshots.py`
+Specify an input filename and a list of time points:
+
+`./screenshots.py <input_video_file> <time point 1> [<time point 2> ...]`
+
+## Examples
+
+`./screenshots.py test.mov 5`
+
+=> one screenshot, five seconds into the video
+
+`./screenshots.py test.mov 10% 50%`
+
+=> two screenshots - one near the beginning and one in the middle
+
+### URLs are allowed:
+
+`./screenshots.py "https://sample-videos.com/video123/mp4/480/big_buck_bunny_480p_1mb.mp4" 10%`
