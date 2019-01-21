@@ -21,7 +21,7 @@ def main():
     for i,t in enumerate(times):
         path_fragment = re.sub(r'[/.]', '_', video_path)
         path_fragment = re.sub(r'\W', '', path_fragment)
-        jpg_path = 'screenshot_' + path_fragment + '_' + str(i+1) + '_of_' + str(len(times)) + '.jpg'
+        jpg_path = 'screenshot_' + path_fragment + '-' + str(round(t, 3)).replace('.', '_') + '.jpg'
         print('Creating screenshot at', t, 'seconds')
         cmd = [ FFMPEG_PATH, '-y', '-loglevel', 'warning', '-i', video_path, '-ss', str(t), '-frames:v', '1', jpg_path ]
         print(' '.join(cmd))
