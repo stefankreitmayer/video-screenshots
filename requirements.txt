@@ -1,0 +1,6 @@
+#
+####### video-screenshots #######
+#
+####### Requirements without version specifiers #######
+
+moviepy

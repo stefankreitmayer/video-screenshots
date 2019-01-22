@@ -1,0 +1,10 @@
+### ignore images
+*.jpg
+*.jpeg
+
+### ignore node modules
+node_modules
+
+
+### ignore .vscode values
+.vscode/
