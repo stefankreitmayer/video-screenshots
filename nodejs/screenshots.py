@@ -16,23 +16,23 @@ def main():
     # create an array of when to extract the screenshot
     time_args = sys.argv[2:]
     times = [ (float(t[:-1])*duration/100 if '%' in t else float(t)) for t in time_args ]
-    ## create an array to store the thumbnail names
-    thumbnail_names = []
+    ## create an array to store the screenshot names
+    screenshot_names = []
     FFMPEG_PATH = 'ffmpeg'
     for i,t in enumerate(times):
         # construct the jpg file name
         path_fragment = re.sub(r'[/.]', '_', video_path)
         path_fragment = re.sub(r'\W', '', path_fragment)
         jpg_path = 'screenshot_' + path_fragment + '-' + str(round(t, 3)).replace('.', '_') + '.jpg'
-        # setup the command parameters for thumbnail extraction
+        # setup the command parameters for screenshot extraction
         cmd = [ FFMPEG_PATH, '-y', '-loglevel', 'warning', '-i', video_path, '-ss', str(t), '-frames:v', '1', jpg_path ]
         # start the extraction process
         subprocess.call(cmd)
-        # save the thumbnail name
-        thumbnail_names.append(jpg_path)
+        # save the screenshot name
+        screenshot_names.append(jpg_path)
 
     results = {
-        'thumbnail_names': thumbnail_names
+        'screenshot_names': screenshot_names
     }
     print(str(results))
     sys.stdout.flush()
