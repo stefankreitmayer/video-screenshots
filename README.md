@@ -31,3 +31,8 @@ Specify an input filename and a list of time points:
 ### URLs are allowed:
 
 `./screenshots.py "https://sample-videos.com/video123/mp4/480/big_buck_bunny_480p_1mb.mp4" 10%`
+
+
+### Node.js embedding
+
+See nodejs/embedding-example.js
